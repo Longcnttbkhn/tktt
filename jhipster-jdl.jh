@@ -1,0 +1,12 @@
+
+entity Post {
+	content String required maxlength(10000),
+    url LocalDate required,
+    description String required maxlength(5000),
+    title String required
+}
+
+paginate Post with pagination
+
+dto * with mapstruct
+
