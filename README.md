@@ -1,6 +1,49 @@
 # tktt
 This application was generated using JHipster 4.1.1, you can find documentation and help at [https://jhipster.github.io/documentation-archive/v4.1.1](https://jhipster.github.io/documentation-archive/v4.1.1).
 
+## Require
+Install [Xampp][]
+
+Create new database: 
+    
+    name: tktt
+    
+    collation: utf8_general_ci
+
+Create new account, grand all permistion 
+
+    name: tktt
+    
+    password: tktt
+
+
+## Config database
+config for develop: 
+
+    src/resurces/config/application-dev.yml
+
+config for product: 
+
+    src/resurces/config/application-dev.yml
+
+
+## Import data
+Extract file 'yahoo.csv.zip'
+
+Access to sql:
+
+	mysql --default-character-set=utf8 -u<username> -p<password>
+
+import data:
+	
+	LOAD DATA LOCAL INFILE '[path of project]/yahoo.csv'
+	INTO TABLE post
+	FIELDS TERMINATED BY ','
+	    ENCLOSED BY '"'
+	LINES TERMINATED BY '\n'
+	IGNORE 1 LINES
+	(content,url,description,title)
+	
 ## Development
 
 Before you can build this project, you must install and configure the following dependencies on your machine:

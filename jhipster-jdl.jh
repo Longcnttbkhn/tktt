@@ -1,7 +1,7 @@
 
 entity Post {
 	content String required maxlength(10000),
-    url LocalDate required,
+    url String required,
     description String required maxlength(5000),
     title String required
 }

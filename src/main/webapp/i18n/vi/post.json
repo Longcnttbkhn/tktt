@@ -1,0 +1,25 @@
+{
+    "tkttApp": {
+        "post" : {
+            "home": {
+                "title": "Posts",
+                "createLabel": "Tạo mới Post",
+                "createOrEditLabel": "Tạo hoặc chỉnh sửa Post",
+                "search": "Tìm kiếm Post"
+            },
+            "created": "Một Post đã được tạo với id {{ param }}",
+            "updated": "Một Post có id {{ param }} đã được cập nhật",
+            "deleted": "Một Post có id {{ param }} đã bị xóa",
+            "delete": {
+                "question": "Bạn có chắc chắn muốn xóa Post có {{ id }} không?"
+            },
+            "detail": {
+                "title": "Post"
+            },
+            "content": "Content",
+            "url": "Url",
+            "description": "Description",
+            "title": "Title"
+        }
+    }
+}
