@@ -1,0 +1,31 @@
+<div ng-cloak>
+    <style type="text/css">
+    .item {
+        display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    </style>
+    <div class="row">
+        <div class="col-lg-1 col-md-1 hidden-sm hidden-xs">
+        </div>
+        <div class="col-lg-6 col-md-7 col-sm-8 col-xs-12">
+            <div ng-repeat="post in vm.posts track by post.id" style="margin-bottom: 26px; margin-top: 0px">
+                <h3 class="item">
+            		<a href="{{post.url}}">{{post.title}}</a>
+            	</h3>
+                <div style="line-height: 18px; color: #545454; max-width: 48em">
+                    <div style="white-space: nowrap; height: 18px; line-height: 16px; display: block; color: #006621; font-size: normal; text-overflow: ellipsis; overflow: hidden;">{{post.url}}</div>
+                </div>
+                <span style="line-height: 1.4; word-wrap: break-word;">{{post.description}}</span>
+            </div>
+            <div class="text-center">
+                <jhi-item-count page="vm.page" total="vm.queryCount" items-per-page="vm.itemsPerPage"></jhi-item-count>
+                <uib-pagination class="pagination-sm" total-items="vm.totalItems" items-per-page="vm.itemsPerPage" ng-model="vm.page" ng-change="vm.transition()"></uib-pagination>
+            </div>
+        </div>
+        <div class="col-lg-5 col-md-4 col-sm-4 hidden-xs">
+        </div>
+    </div>
+</div>

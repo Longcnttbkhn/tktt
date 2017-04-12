@@ -23,6 +23,23 @@
         vm.toggleNavbar = toggleNavbar;
         vm.collapseNavbar = collapseNavbar;
         vm.$state = $state;
+        vm.search = search;
+
+        function search(searchQuery) {
+            if (!searchQuery){
+                return vm.clear();
+            }
+            vm.links = null;
+            vm.page = 1;
+            // vm.predicate = '_score';
+            // vm.reverse = false;
+            vm.currentSearch = searchQuery;
+            $state.transitionTo($state.$current, {
+                page: vm.page,
+                // sort: vm.predicate + ',' + (vm.reverse ? 'asc' : 'desc'),
+                query: vm.currentSearch
+            });
+        }
 
         function login() {
             collapseNavbar();
