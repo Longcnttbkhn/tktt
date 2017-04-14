@@ -159,8 +159,8 @@ public class PostResource {
     @Timed
     public ResponseEntity<List<PostDTO>> searchPosts(@RequestParam String query, @ApiParam Pageable pageable) {
         log.debug("REST request to search for a page of Posts for query {}", query);
-//        Page<Post> page = postSearchRepository.search(queryStringQuery(query), pageable);
-        Page<Post> page = postRepository.findAllByTitleContaining(pageable, query);
+        Page<Post> page = postSearchRepository.search(queryStringQuery(query), pageable);
+//        Page<Post> page = postRepository.findAllByTitleContaining(pageable, query);
         HttpHeaders headers = PaginationUtil.generateSearchPaginationHttpHeaders(query, page, "/api/_search/posts");
         return new ResponseEntity<>(postMapper.postsToPostDTOs(page.getContent()), headers, HttpStatus.OK);
     }
