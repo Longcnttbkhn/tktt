@@ -23,6 +23,7 @@
         vm.toggleNavbar = toggleNavbar;
         vm.collapseNavbar = collapseNavbar;
         vm.$state = $state;
+        vm.searchQuery = $state.params.query;
         vm.search = search;
 
         function search(searchQuery) {

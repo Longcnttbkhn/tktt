@@ -39,7 +39,7 @@ Access to sql:
 
 import data:
 	
-	LOAD DATA LOCAL INFILE '[path of project]/yahoo.csv'
+	LOAD DATA LOCAL INFILE '/home/long/project/tktt/tktt-jhipster/yahoo.csv'
 	INTO TABLE post
 	FIELDS TERMINATED BY ','
 	    ENCLOSED BY '"'
